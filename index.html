@@ -7,46 +7,54 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0; /* Light gray background color */
+            background-color: #007bff; /* Blue background color */
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
         h1 {
             text-align: center;
-            color: #333; /* Dark gray text color */
-            margin-top: 50px;
+            color: #fff; /* White text color */
         }
 
         ul {
             list-style-type: none;
             padding: 0;
-            margin: 0 auto;
-            width: 300px;
+            margin: 0;
+            text-align: center;
         }
 
         li {
-            margin-bottom: 10px;
+            display: inline-block;
+            margin: 0 10px;
         }
 
-        a {
+        a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #fff; /* White button background color */
+            color: #007bff; /* Blue button text color */
             text-decoration: none;
-            color: #007bff; /* Blue hyperlink color */
-            font-size: 18px;
-            transition: color 0.3s ease;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
 
-        a:hover {
-            color: #0056b3; /* Dark blue on hover */
+        a.button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            color: #fff; /* White text color on hover */
         }
     </style>
 </head>
 <body>
     <h1>My Projects</h1>
     <ul>
-        <li><a href="project1.zip">Project 1</a></li>
-        <li><a href="project-2.zip">Project 2</a></li>
-        <li><a href="project 3.zip">Project 3</a></li>
+        <li><a href="project1.html" class="button">Project 1</a></li>
+        <li><a href="project2.html" class="button">Project 2</a></li>
+        <li><a href="project3.html" class="button">Project 3</a></li>
     </ul>
 </body>
 </html>

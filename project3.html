@@ -1,1 +1,128 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Music Player</title>
+   <style>
+    #cp {
+      margin-bottom: 10px;
+      width: 100px; 
+      text-align: center;
+    }
+    #message {
+      font-style: italic;
+      color: gray;
+      margin-top: 10px;
+      color: #800080; 
+      font-weight: bold;
+    }
+    button {
+      background-color: #8B4513;
+      padding: 10px; 
+      font-size: 16px; 
+      border: none; 
+      width: 100px; 
+    }
+    body {
+      background: url(images/background.jpg);
+      background-size: cover; 
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Control Panel will go here -->
+  <div id="cp">
+    <button id="play">Play</button>
+  </div>
+  <div id="cp">
+    <button id="pause">Pause</button>
+  </div>
+  <div id="cp">
+    <button id="stop">Stop</button>
+  </div>
+  <div id="cp">
+    <button id="mute">Mute</button>
+  </div>
+  <div id="cp">
+    <button id="unmute">Unmute</button>
+  </div>
+  <div id="cp">
+    <button id="volUp">Volume Up</button>
+  </div>
+  <div id="cp">
+    <button id="volDown">Volume Down</button>
+  </div>
+  <div id="message">Waiting</div>
+  
+  <!-- Audio player will go here -->
+  <audio id="player">
+    <source src="music/song1.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+  <script>
+    var main = function() {
+      var state;
+      var volume;
+
+      // The PLAY button
+      $('#play').click(function(){
+          $('#message').text("Playing track");
+          $('#player').trigger("play");
+      });
+
+      // The PAUSE button
+      $('#pause').click(function(){
+          $('#message').text("Track paused");
+          $('#player').trigger("pause");
+      });
+
+      // The MUTE button
+      $('#mute').click(function(){
+          $('#message').text("Track muted");
+          $('#player').prop('muted', true);
+      });
+
+      // The UNMUTE button
+      $('#unmute').click(function(){
+          $('#message').text("Track unmuted");
+          $('#player').prop('muted', false);
+      });
+
+      // The STOP button
+      $('#stop').click(function(){
+          $('#message').text("Track stopped");
+          $('#player').trigger("pause"); // Pause the music
+          $('#player').prop('currentTime', 0); // Reset currentTime to 0
+      });
+
+      // The VOLUME UP button
+      $('#volUp').click(function(){
+          var currentVolume = $('#player').prop('volume');
+          if (currentVolume < 1) {
+              var newVolume = Math.min(1, currentVolume + 0.1);
+              $('#player').prop('volume', newVolume);
+              $('#message').text("Volume increased");
+          } else {
+              console.log("Volume is already at maximum");
+          }
+      });
+
+      // The VOLUME DOWN button
+      $('#volDown').click(function(){
+          var currentVolume = $('#player').prop('volume');
+          if (currentVolume > 0) {
+              var newVolume = Math.max(0, currentVolume - 0.1);
+              $('#player').prop('volume', newVolume);
+              $('#message').text("Volume decreased");
+          } else {
+              console.log("Volume is already at minimum");
+          }
+      });
+    }
+
+    $(document).ready(main);
+  </script>
+</body>
+</html>
 

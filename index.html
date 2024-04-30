@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Projects</title>
-    <subtitle>Ananiah Myers</subtitle>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #007bff; /* Blue background color */
+            background-color: #001f3f; /* Navy blue background color */
             margin: 0;
             padding: 0;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -20,6 +20,13 @@
         h1 {
             text-align: center;
             color: #fff; /* White text color */
+            margin-top: 0; /* Remove default margin */
+        }
+
+        subtitle {
+            text-align: center;
+            color: #fff; /* White text color */
+            margin-top: 5px; /* Add some space between title and subtitle */
         }
 
         ul {
@@ -31,7 +38,7 @@
 
         li {
             display: inline-block;
-            margin: 0 10px;
+            margin: 10px;
         }
 
         a.button {
@@ -52,11 +59,11 @@
 </head>
 <body>
     <h1>My Projects</h1>
+    <subtitle>Ananiah Myers</subtitle>
     <ul>
         <li><a href="project1.html" class="button">Project 1</a></li>
         <li><a href="project2.html" class="button">Project 2</a></li>
-        <li><a href="project 3.zip" class="button">Project 3</a></li>
+        <li><a href="project3.zip" class="button">Project 3</a></li>
     </ul>
 </body>
 </html>
-
